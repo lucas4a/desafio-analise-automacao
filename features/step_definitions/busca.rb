@@ -11,3 +11,10 @@ Então("devem ser retornados produtos") do
   expect(@search_page.products.first).to have_name
   expect(@search_page.products.first.name.text).to have_content 'shirt'
 end
+
+Então("não devem ser retornados produtos com nome {string}") do |query|
+  stringBusca = 'No results were found for your search "'
+  stringBusca.concat(query)
+  stringBusca.concat('"')
+  expect(@search_page.alert).to have_content stringBusca
+end

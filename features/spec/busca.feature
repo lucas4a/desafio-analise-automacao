@@ -16,3 +16,5 @@ Funcionalidade: Buscas no Fake Ecommerce
   # Completar o cenário abaixo
   @busca_sem_resultados
   Cenário: Busca sem resultados
+    Quando buscar pelo produto 'asd'
+    Então não devem ser retornados produtos com nome 'asd'
